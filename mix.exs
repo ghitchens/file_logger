@@ -13,7 +13,7 @@ defmodule FileLogger.Mixfile do
   #
   # Type `mix help compile.app` for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:logger, :logger_file_backend]]
   end
 
   # Dependencies can be Hex packages:
