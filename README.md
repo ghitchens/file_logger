@@ -12,7 +12,7 @@ Feel free to use as an example for your own logging config
 
 ## Usage:
 
-    FileLogger.start "/path/to/log/files/directory"
+    FileLogger.prepare_and_rotate "/path/to/log/files/directory"
     
     
     

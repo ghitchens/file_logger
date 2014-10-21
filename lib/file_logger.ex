@@ -7,7 +7,7 @@ defmodule FileLogger do
   """
   require Logger
   
-  def start(log_dir) do
+  def prepare_and_rotate(log_dir) do
     
     Logger.debug "starting file logging - ensuring directory exists"
     File.mkdir_p log_dir
@@ -24,11 +24,14 @@ defmodule FileLogger do
     backends = [ debug: [ path: debug_log,  level: :debug ],
                  info:  [ path: system_log, level: :info ],
                  error: [ path: error_log,  level: :error ] ]
+
     for {id, opts} <- backends do
       backend = {LoggerFileBackend, id}
       Logger.add_backend(backend)
       Logger.configure_backend(backend, opts)
     end
+
+    Logger.debug "file logging should be active"
 
   end
   
