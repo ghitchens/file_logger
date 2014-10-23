@@ -21,7 +21,7 @@ defmodule FileLogger do
     rotate_log system_log
 
     Logger.debug "starting up logger backends"
-    backends = [ debug: [ path: debug_log,  level: :debug ],
+    backends = [ #debug: [ path: debug_log,  level: :debug ],
                  info:  [ path: system_log, level: :info ],
                  error: [ path: error_log,  level: :error ] ]
 
